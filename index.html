@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="grid">
+    <header class="header">
+      <nav class="topnav" id="container">
+        <ul>
+          <li id="item1" class="title-logo">WebApp<sup>TM</sup></li>
+          <li id="item2" class="bell-icon" onclick="alert()">
+            <span class="bell fa fa-bell"></span>
+            <div id="notifications"></div>
+            <img
+              src="svgs/bell.svg"
+              style="height: 20px; width: 20px"
+              alt="image of bell"
+            />
+
+            <div class="tooltip">
+              <span class="tooltiptext">
+                <a href="#">Alert</a>
+                <br /><a href="#">Alert</a>
+              </span>
+            </div>
+          </li>
+          <li id="item3" class="student">
+            <img
+              src="images/member-1.jpg"
+              height="20"
+              width="20"
+              alt="image of a person"
+            />Student Name
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div class="sidebar-logos">
+      <ul>
+        <li class="home">
+          <a href="#"><img src="svgs/home.svg" alt="symbol of a house" /></a>
+        </li>
+        <li class="chart">
+          <a href="#traffic"
+            ><img src="svgs/bar-chart.svg" alt="image of a bar chart"
+          /></a>
+        </li>
+        <li class="members">
+          <a href="#members"
+            ><img src="svgs/members.svg" alt="image of a person"
+          /></a>
+        </li>
+        <li class="settings">
+          <a href="#settings"
+            ><img src="svgs/settings.svg" alt="symbol of a gear"
+          /></a>
+        </li>
+      </ul>
+    </div>
+    <main class="main">
+      <div class="flex-container dashboard">
+        <h2 class="headline">Dashboard</h2>
+        <div class="tab"></div>
+      </div>
+
+      <div class="alert" id="alert"></div>
+
+      <section class="traffic-container" id="traffic">
+        <div class="traffic-header">
+          <h3>TRAFFIC</h3>
+          <ul class="traffic-nav">
+            <li
+              class="traffic-nav-link hourly"
+              onclick="timeFrame('hourly')"
+              value="hourly"
+            >
+              Hourly
+            </li>
+            <li
+              class="traffic-nav-link daily"
+              onclick="timeFrame('daily')"
+              value="daily"
+            >
+              Daily
+            </li>
+            <li
+              class="traffic-nav-link weekly"
+              onclick="timeFrame('weekly')"
+              value="weekly"
+            >
+              Weekly
+            </li>
+            <li
+              class="traffic-nav-link monthly"
+              onclick="timeFrame('monthly')"
+              value="monthly"
+            >
+              Monthly
+            </li>
+          </ul>
+        </div>
+        <div class="widget-container-full">
+          <canvas id="traffic-chart"></canvas>
+        </div>
+      </section>
+
+      <section class="Daily">
+        <h3><strong>DAILY TRAFFIC</strong></h3>
+        <div class="widget-container-half">
+          <canvas id="daily-chart"></canvas>
+        </div>
+      </section>
+
+      <section class="mobile-users">
+        <h3><strong>MOBILE USERS</strong></h3>
+        <div class="widget-container-half">
+          <canvas id="mobile-doughnut-chart"></canvas>
+        </div>
+      </section>
+
+      <div class="social-container">
+        <h3 class="social-heading"><strong>SOCIAL STATS</strong></h3>
+
+        <div class="social-cards">
+          <section class="social-facebook">
+            <div class="social-image">
+              <svg
+                class="facebook-icon"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M23.998 12c0-6.628-5.372-12-11.999-12C5.372 0 0 5.372 0 12c0 5.988 4.388 
+             10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234
+            2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"
+                />
+                <circle stroke="#1e2f97" stroke-width="4" />
+              </svg>
+            </div>
+            <div class="social-text">
+              <h3>Facebook</h3>
+              <p>10,320</p>
+            </div>
+          </section>
+
+          <section class="social-instagram">
+            <div class="social-image">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="#1e2f97"
+                  d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126
+             1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261
+              2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988
+               8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z"
+                />
+              </svg>
+            </div>
+
+            <div class="social-text">
+              <h3>Instagram</h3>
+              <p>10,445</p>
+            </div>
+          </section>
+
+          <section class="social-twitter">
+            <div class="social-image">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  fill="#1e2f97"
+                  d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z"
+                />
+              </svg>
+            </div>
+
+            <div class="social-text">
+              <h3>Twitter</h3>
+              <p>22,189</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="new-members" id="members">
+        <h3 class="heading" id="heading"><strong>NEW MEMBERS</strong></h3>
+
+        <div class="members-cards">
+          <div class="members-container">
+            <img
+              src="images/member-1.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <h3>Victoria Chambers</h3>
+              <a href="#" style="text-decoration: none"
+                >victoria.chambers80@example.com</a
+              >
+            </div>
+            <p>10/15/20</p>
+          </div>
+
+          <div class="members-container">
+            <img
+              src="images/member-2.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <h3>Dale Byrd</h3>
+              <a href="#" style="text-decoration: none"
+                >dale.byrd52@example.com</a
+              >
+            </div>
+            <p>10/15/20</p>
+          </div>
+
+          <div class="members-container">
+            <img
+              src="images/member-3.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <h3>Dawn Wood</h3>
+              <a href="#" style="text-decoration: none"
+                >dawn.wood16@example.com</a
+              >
+            </div>
+            <p>10/15/20</p>
+          </div>
+
+          <div class="members-container">
+            <img
+              src="images/member-4.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <h3>Dan Oliver</h3>
+              <a href="#" style="text-decoration: none"
+                >dan.oliver82@example.com</a
+              >
+            </div>
+            <p>10/15/20</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="recent-activity">
+        <h3><strong>RECENT ACTIVITY</strong></h3>
+
+        <div class="members-recent-activity-cards">
+          <div class="members-container">
+            <img
+              src="images/member-1.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <p>
+                Victoria Chambers commented on
+                <strong>WebApp's SEO Tips</strong>
+              </p>
+              <p>4 hours ago</p>
+            </div>
+            <div class="arrow">></div>
+          </div>
+
+          <div class="members-container" id="border-top">
+            <img
+              src="images/member-2.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <p>
+                Dale Byrd commented liked the post
+                <strong>Facebook's Changes for 2021</strong>
+              </p>
+              <p>5 hours ago</p>
+            </div>
+            <div class="members-arrow">></div>
+          </div>
+
+          <div class="members-container">
+            <img
+              src="images/member-3.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <p>
+                Dawn Wood commented on
+                <strong>Facebook's Changes for 2021</strong>
+              </p>
+              <p>5 hours ago</p>
+            </div>
+            <div class="members-arrow">></div>
+          </div>
+
+          <div class="members-container">
+            <img
+              src="images/member-4.jpg"
+              alt="image of a person"
+              class="profile-image"
+            />
+
+            <div class="members-text">
+              <p>Dan Oliver posted <strong>WebApp's SEO Tips</strong></p>
+              <p>1 day ago</p>
+            </div>
+            <div class="members-arrow">></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="message-container">
+        <h3><strong>MESSAGE USER</strong></h3>
+        <form class="widget-container">
+          <input
+            list="members-names"
+            type="text"
+            placeholder="Search for User"
+            class="form-field"
+            id="userField"
+          />
+          <datalist id="members-names">
+            <option value="Adrian"></option>
+            <option value="Steve"></option>
+            <option value="Robert Trujillo"></option>
+            <option value="Lars Ulrich"></option>
+            <option value="James Hetfield"></option>
+            <option value="Kirk Hammet"></option>
+          </datalist>
+          <textarea
+            placeholder="Message for User"
+            class="form-cont"
+            id="messageField"
+          ></textarea>
+          <button class="button-primary" id="send">SEND</button>
+        </form>
+      </section>
+
+      <section class="settings-container" id="settings">
+        <h3><strong>SETTINGS</strong></h3>
+
+        <div class="settings-toggle">
+          <div class="toggle-container">
+            <p>Send Email Notifications</p>
+            <label class="toggle" for="Email">
+              <input type="checkbox" id="Email" />
+              <span class="slider"></span>
+
+              <span class="labels" data-on="ON" data-off="OFF"></span>
+            </label>
+          </div>
+
+          <div class="toggle-container">
+            <p>Set Profile To Public</p>
+            <label class="toggle" for="Profile-To-Public">
+              <input type="checkbox" id="Profile-To-Public" />
+              <span class="slider"></span>
+
+              <span class="labels" data-on="ON" data-off="OFF"></span>
+            </label>
+          </div>
+        </div>
+
+        <select class="form-field timezone" id="timezone">
+          <option disabled selected>Select Timezone</option>
+          <option value="-12:00">(GMT -12:00) Eniwetok, Kwajalein</option>
+          <option value="-11:00">(GMT -11:00) Midway Island, Samoa</option>
+          <option value="-10:00">(GMT -10:00) Hawaii</option>
+          <option value="-09:50">(GMT -9:30) Taiohae</option>
+          <option value="-09:00">(GMT -9:00) Alaska</option>
+          <option value="-08:00">
+            (GMT -8:00) Pacific Time (US &amp; Canada)
+          </option>
+          <option value="-07:00">
+            (GMT -7:00) Mountain Time (US &amp; Canada)
+          </option>
+          <option value="-06:00">
+            (GMT -6:00) Central Time (US &amp; Canada), Mexico City
+          </option>
+          <option value="-05:00">
+            (GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima
+          </option>
+          <option value="-04:50">(GMT -4:30) Caracas</option>
+          <option value="-04:00">
+            (GMT -4:00) Atlantic Time (Canada), Caracas, La Paz
+          </option>
+          <option value="-03:50">(GMT -3:30) Newfoundland</option>
+          <option value="-03:00">
+            (GMT -3:00) Brazil, Buenos Aires, Georgetown
+          </option>
+          <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
+          <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
+          <option value="+00:00" selected="selected">
+            (GMT) Western Europe Time, London, Lisbon, Casablanca
+          </option>
+          <option value="+01:00">
+            (GMT +1:00) Brussels, Copenhagen, Madrid, Paris
+          </option>
+          <option value="+02:00">(GMT +2:00) Kaliningrad, South Africa</option>
+          <option value="+03:00">
+            (GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg
+          </option>
+          <option value="+03:50">(GMT +3:30) Tehran</option>
+          <option value="+04:00">
+            (GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi
+          </option>
+          <option value="+04:50">(GMT +4:30) Kabul</option>
+          <option value="+05:00">
+            (GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent
+          </option>
+          <option value="+05:50">
+            (GMT +5:30) Bombay, Calcutta, Madras, New Delhi
+          </option>
+          <option value="+05:75">(GMT +5:45) Kathmandu, Pokhara</option>
+          <option value="+06:00">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+          <option value="+06:50">(GMT +6:30) Yangon, Mandalay</option>
+          <option value="+07:00">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+          <option value="+08:00">
+            (GMT +8:00) Beijing, Perth, Singapore, Hong Kong
+          </option>
+          <option value="+08:75">(GMT +8:45) Eucla</option>
+          <option value="+09:00">
+            (GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk
+          </option>
+          <option value="+09:50">(GMT +9:30) Adelaide, Darwin</option>
+          <option value="+10:00">
+            (GMT +10:00) Eastern Australia, Guam, Vladivostok
+          </option>
+          <option value="+10:50">(GMT +10:30) Lord Howe Island</option>
+          <option value="+11:00">
+            (GMT +11:00) Magadan, Solomon Islands, New Caledonia
+          </option>
+          <option value="+11:50">(GMT +11:30) Norfolk Island</option>
+          <option value="+12:00">
+            (GMT +12:00) Auckland, Wellington, Fiji, Kamchatka
+          </option>
+          <option value="+12:75">(GMT +12:45) Chatham Islands</option>
+          <option value="+13:00">(GMT +13:00) Apia, Nukualofa</option>
+          <option value="+14:00">(GMT +14:00) Line Islands, Tokelau</option>
+        </select>
+
+        <div class="settings-button">
+          <button class="button-primary" id="save">SAVE</button>
+          <button class="button-disabled" id="cancel">CANCEL</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/Unit-07.js"></script>
+  </body>
+</html>
