@@ -23,7 +23,7 @@ body {
   border-radius: 6px;
   margin: auto;
   width: 95%;
-  background-color: #b3a3a3;
+  background-color: #ececec;
   height: 100px;
 }
 .social-twitter .social-image {
@@ -55,7 +55,7 @@ body {
 
 .new-members {
   border-top: 2px solid lightgrey;
-  border-width: 2px;
+  border-width: 100%;
   margin: 0 auto;
   display: block;
   width: 100%;
@@ -67,12 +67,12 @@ body {
   font-weight: 600;
 }
 .new-members .members-container {
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
   border-right: none;
   border-left: none;
   border-top: none;
   display: block;
-  margin: auto;
+  margin: 0 30px 10px 30px;
   width: 95%;
   padding: 10px 0 14px 0;
 }
@@ -134,12 +134,12 @@ body {
   font-weight: 600;
 }
 .recent-activity .members-container {
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
   border-left: none;
+  border-bottom: none;
   border-right: none;
   display: block;
-  margin: auto;
-  width: 95%;
+  margin: 5.5px;
   padding: 24px 0 24px 0;
 }
 .recent-activity .members-container:first-child {
@@ -159,7 +159,7 @@ body {
   font-size: 1rem;
   text-align: center;
 }
-.arrow {
+.members-arrow {
   color: white;
 }
 
@@ -228,13 +228,12 @@ body {
 }
 
 .settings-container {
-  margin: 0 auto;
+  margin: 0;
   display: block;
   width: 100%;
 }
 .settings-container h3 {
   margin: 0;
-
   font-size: 1rem;
   font-weight: 600;
   padding: 15px 0 15px 12px;
@@ -249,7 +248,7 @@ body {
   justify-content: space-between;
 }
 .toggle-container p {
-  font-size: 16px;
+  font-size: 1rem;
 
   margin-left: 0;
   padding: 0 0 0 12px;
@@ -343,7 +342,7 @@ body {
 }
 
 .settings-button {
-  margin: 0 auto;
+  margin: 0;
   word-spacing: 18px;
   text-align: center;
   padding: 14px 0 20px 0;
@@ -394,7 +393,7 @@ body {
 .topnav .title-logo {
   color: whitesmoke;
   font-size: 20px;
-  margin: 0 auto;
+  margin: 0;
   padding: 10px 10px 0 10px;
 }
 .title-logo sup {
@@ -657,7 +656,6 @@ body {
 .social-instagram,
 .social-twitter {
   border: 2px solid lightgrey;
-  border-radius: 4px;
 }
 
 .social-image {
@@ -681,7 +679,7 @@ body {
   border-radius: 5px;
   margin: auto;
   width: 95%;
-  background-color: #b3a3a3;
+  background-color: #ececec;
   height: 100px;
 }
 .social-facebook .social-image {
@@ -700,7 +698,7 @@ body {
 .social-facebook h3 {
   margin: 0;
   padding: 10px 0 0 0;
-  color: rgb(69, 69, 151);
+  color: rgb(92, 92, 206);
   font-size: 20px;
 }
 .social-facebook .social-text p {
@@ -716,7 +714,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 95%;
-  background-color: #b3a3a3;
+  background-color: #ececec;
   height: 100px;
 }
 .social-instagram .social-image {
@@ -735,7 +733,7 @@ body {
   margin: 0;
   padding: 10px 0 0 0;
 
-  color: rgb(83, 83, 201);
+  color: rgb(92, 92, 206);
   font-size: 20px;
 }
 .social-instagram .social-text p {
@@ -762,6 +760,10 @@ body {
   }
   .topnav #item3 {
     padding-left: 0;
+  }
+  .sidebar-logos .chart img {
+    height: 30px;
+    width: 30px;
   }
 
   .sidebar-logos ul {
@@ -807,6 +809,9 @@ body {
   .traffic-header {
     display: flex;
     flex-wrap: wrap;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
     justify-content: space-around;
     padding: 0;
   }
@@ -868,7 +873,10 @@ body {
   }
   .social-cards {
     display: flex;
-    margin: 0 16px 0 16px;
+    text-align: left;
+    margin-left: 0;
+    padding-left: 0;
+    /* margin: 0 16px 0 16px; */
   }
   .social-cards section {
     margin: 5px;
@@ -943,9 +951,9 @@ body {
     margin: 0;
     padding: 0;
   }
-  .arrow {
+  .members-arrow {
     color: black;
-    margin: 1rem 0 0 0;
+    margin: 1rem 0 0 0 0;
     padding: 1rem 0 0 0;
     height: 40px;
   }
@@ -967,7 +975,7 @@ body {
   }
   .settings-container .toggle-container p {
     font-size: 1rem;
-    margin: 0 auto;
+    margin: 0;
     padding: 4px 0px 0 18px;
   }
   .settings-container .toggle-container {
@@ -1141,7 +1149,7 @@ body {
   }
 
   .settings-container {
-    border: 1px solid lightgrey;
+    border: 2px solid lightgrey;
     grid-column: 2;
   }
   .settings-toggle {
@@ -1158,5 +1166,15 @@ body {
     width: 97%;
     margin-top: 53px;
     margin-bottom: 13px;
+  }
+}
+
+@media screen and (min-width: 320px) {
+  .members-arrow {
+    display: flex;
+  }
+  .sidebar-logos .chart img {
+    height: 20px;
+    width: 20px;
   }
 }
