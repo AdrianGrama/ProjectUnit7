@@ -10,6 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <title>Web Dashboard App</title>
   </head>
   <body class="grid">
     <header class="header">
@@ -17,7 +18,7 @@
         <ul>
           <li id="item1" class="title-logo">WebApp<sup>TM</sup></li>
           <li id="item2" class="bell-icon" onclick="alert()">
-            <span class="bell fa fa-bell"></span>
+            <span class="bell"></span>
             <div id="notifications"></div>
             <img
               src="svgs/bell.svg"
@@ -77,32 +78,16 @@
         <div class="traffic-header">
           <h3>TRAFFIC</h3>
           <ul class="traffic-nav">
-            <li
-              class="traffic-nav-link hourly"
-              onclick="timeFrame('hourly')"
-              value="hourly"
-            >
+            <li class="traffic-nav-link hourly" onclick="timeFrame('hourly')">
               Hourly
             </li>
-            <li
-              class="traffic-nav-link daily"
-              onclick="timeFrame('daily')"
-              value="daily"
-            >
+            <li class="traffic-nav-link daily" onclick="timeFrame('daily')">
               Daily
             </li>
-            <li
-              class="traffic-nav-link weekly"
-              onclick="timeFrame('weekly')"
-              value="weekly"
-            >
+            <li class="traffic-nav-link weekly" onclick="timeFrame('weekly')">
               Weekly
             </li>
-            <li
-              class="traffic-nav-link monthly"
-              onclick="timeFrame('monthly')"
-              value="monthly"
-            >
+            <li class="traffic-nav-link monthly" onclick="timeFrame('monthly')">
               Monthly
             </li>
           </ul>
@@ -142,7 +127,7 @@
              10.952 10.124 11.852v-8.384H7.078v-3.469h3.046V9.356c0-3.008 1.792-4.669 4.532-4.669 1.313 0 2.686.234
             2.686.234v2.953H15.83c-1.49 0-1.955.925-1.955 1.874V12h3.328l-.532 3.469h-2.796v8.384c5.736-.9 10.124-5.864 10.124-11.853z"
                 />
-                <circle stroke="#1e2f97" stroke-width="4" />
+                <circle stroke="#1e2f97" stroke-width="4" r="" />
               </svg>
             </div>
             <div class="social-text">
@@ -410,7 +395,7 @@
           </option>
           <option value="-02:00">(GMT -2:00) Mid-Atlantic</option>
           <option value="-01:00">(GMT -1:00) Azores, Cape Verde Islands</option>
-          <option value="+00:00" selected="selected">
+          <option value="+00:00">
             (GMT) Western Europe Time, London, Lisbon, Casablanca
           </option>
           <option value="+01:00">
