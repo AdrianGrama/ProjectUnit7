@@ -123,7 +123,7 @@ body {
 
 .recent-activity {
   border-top: 2px solid lightgrey;
-  margin: 0 auto;
+  margin: 0;
   display: block;
   width: 100%;
 }
@@ -139,11 +139,12 @@ body {
   border-bottom: none;
   border-right: none;
   display: block;
-  margin: 5.5px;
+  margin: 5.7px 10px 5px;
   padding: 24px 0 24px 0;
 }
 .recent-activity .members-container:first-child {
   border-top: none;
+  /* height: 147px; */
 }
 .recent-activity .members-container:last-child {
   border-bottom: none;
@@ -245,21 +246,23 @@ body {
 }
 .toggle-container {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
 }
 .toggle-container p {
   font-size: 1rem;
-
-  margin-left: 0;
-  padding: 0 0 0 12px;
+  padding: 0 0 10px;
+  margin: 0 0 15px 0;
 }
 .toggle {
   border: 2px solid lightgrey;
   background-color: rgb(204, 000, 000);
-  width: 100px;
+  width: 76px;
   height: 30px;
+  padding: 10px;
   position: relative;
-  display: inline-block;
+  display: block;
+  /* flex-wrap: wrap; */
   border-radius: 1rem;
   cursor: pointer;
 }
@@ -299,12 +302,15 @@ body {
   width: 73px;
   height: 20px;
   font-size: 12px;
+  /* text-align: -webkit-left; */
   transition: all 0.4s ease-in-out;
 }
 .toggle .labels::after {
   content: attr(data-off);
   position: absolute;
   right: 5px;
+  /* left: auto; */
+  margin: 0 16px;
   color: white;
   opacity: 1;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
@@ -905,7 +911,7 @@ body {
   }
   .new-members .members-container:first-child {
     border-top: none;
-    margin: 0;
+    /* margin: 0; */
   }
   .new-members .members-container:last-child {
     border-bottom: none;
@@ -1100,8 +1106,9 @@ body {
     padding-left: 1rem;
   }
   .new-members .members-container {
-    height: 150px;
+    height: 157.8px;
     margin: 0;
+    width: 100%;
   }
   .new-members .members-container img {
     margin: 20px 0 0 0;
@@ -1125,6 +1132,7 @@ body {
   }
   .recent-activity .members-container {
     height: 149px;
+    width: 100%;
   }
   .recent-activity .members-container img {
     margin: 5px 0 0 0;
