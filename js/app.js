@@ -69,10 +69,15 @@ let trafficOptions = {
     animation: {
         duration: 0
     },
+      responsive: true,
+    maintainAspectRatio: false,  // Allow dynamic height adjustment
     scales: {
-        y: {
-            beginAtZero: true
-        }
+      x: {
+        display: true,
+      },
+      y: {
+        display: true,
+      }
     }
 };
 
