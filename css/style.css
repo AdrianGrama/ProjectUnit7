@@ -23,7 +23,7 @@ body {
   border-radius: 6px;
   margin: auto;
   width: 95%;
-  background-color: #ececec;
+  background-color: #b3a3a3;
   height: 100px;
 }
 .social-twitter .social-image {
@@ -55,7 +55,7 @@ body {
 
 .new-members {
   border-top: 2px solid lightgrey;
-  border-width: 100%;
+  border-width: 2px;
   margin: 0 auto;
   display: block;
   width: 100%;
@@ -159,7 +159,7 @@ body {
   font-size: 1rem;
   text-align: center;
 }
-.members-arrow {
+.arrow {
   color: white;
 }
 
@@ -657,6 +657,7 @@ body {
 .social-instagram,
 .social-twitter {
   border: 2px solid lightgrey;
+  border-radius: 4px;
 }
 
 .social-image {
@@ -680,7 +681,7 @@ body {
   border-radius: 5px;
   margin: auto;
   width: 95%;
-  background-color: #ececec;
+  background-color: #b3a3a3;
   height: 100px;
 }
 .social-facebook .social-image {
@@ -699,7 +700,7 @@ body {
 .social-facebook h3 {
   margin: 0;
   padding: 10px 0 0 0;
-  color: rgb(92, 92, 206);
+  color: rgb(69, 69, 151);
   font-size: 20px;
 }
 .social-facebook .social-text p {
@@ -715,7 +716,7 @@ body {
   margin-top: 20px;
   margin-bottom: 20px;
   width: 95%;
-  background-color: #ececec;
+  background-color: #b3a3a3;
   height: 100px;
 }
 .social-instagram .social-image {
@@ -734,7 +735,7 @@ body {
   margin: 0;
   padding: 10px 0 0 0;
 
-  color: rgb(92, 92, 206);
+  color: rgb(83, 83, 201);
   font-size: 20px;
 }
 .social-instagram .social-text p {
@@ -942,9 +943,9 @@ body {
     margin: 0;
     padding: 0;
   }
-  .members-arrow {
+  .arrow {
     color: black;
-    margin: 1rem 0 0 0 0;
+    margin: 1rem 0 0 0;
     padding: 1rem 0 0 0;
     height: 40px;
   }
